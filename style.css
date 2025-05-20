@@ -219,3 +219,15 @@ input.erreur {
     margin-top: 1rem;
     display: none;
 }
+
+/* ==== VISUALISATION ÉCRAN LECTEUR : contenu caché visuellement mais lu ==== */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}

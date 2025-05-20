@@ -18,7 +18,7 @@
     <h1>Agenda Coach Sportif</h1>
     <nav aria-label="Menu principal">
       <ul>
-        <li><a href="#planning">Planning</a></li>
+        <li><a href="#planning" aria-current="page">Planning</a></li>
         <li><a href="#seances">Préparation</a></li>
         <li><a href="#suivi">Suivi</a></li>
         <li><a href="#repos">Repos</a></li>
@@ -46,24 +46,24 @@
         <div class="form-group">
           <label for="client">Client <span aria-hidden="true">*</span></label>
           <input type="text" id="client" name="client" required aria-describedby="error-client">
-          <p id="error-client" class="error-message" role="alert" aria-live="assertive"></p>
+          <p id="error-client" class="error-message" role="alert" aria-live="assertive" aria-hidden="true"></p>
         </div>
 
         <div class="form-group">
-          <label for="objectif">Objectif</label>
-          <input type="text" id="objectif" name="objectif" aria-describedby="error-objectif">
-          <p id="error-objectif" class="error-message" role="alert" aria-live="assertive"></p>
+          <label for="objectif">Objectif <span id="info-objectif" class="visually-hidden">(facultatif)</span></label>
+          <input type="text" id="objectif" name="objectif" aria-describedby="error-objectif info-objectif">
+          <p id="error-objectif" class="error-message" role="alert" aria-live="assertive" aria-hidden="true"></p>
         </div>
 
         <div class="form-group">
           <label for="exercice">Exercice <span aria-hidden="true">*</span></label>
           <input type="text" id="exercice" name="exercice" required aria-describedby="error-exercice">
-          <p id="error-exercice" class="error-message" role="alert" aria-live="assertive"></p>
+          <p id="error-exercice" class="error-message" role="alert" aria-live="assertive" aria-hidden="true"></p>
         </div>
 
-        <button type="submit">Enregistrer</button>
+        <button type="submit" aria-label="Enregistrer la séance">Enregistrer</button>
       </form>
-      <p id="form-success" class="success-message" role="alert" aria-live="polite"></p>
+      <p id="form-success" class="success-message" role="alert" aria-live="polite" aria-hidden="true"></p>
     </section>
 
     <section id="suivi">
