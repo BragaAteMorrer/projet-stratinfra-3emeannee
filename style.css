@@ -2,171 +2,232 @@
 .theme-light {
     background-color: #ffffff;
     color: #111;
-  }
-  
-  .theme-dark {
+}
+
+.theme-dark {
     background-color: #111;
     color: #f5f5f5;
-  }
-  
-  /* ==== BASE ==== */
-  body {
+}
+
+/* ==== BASE ==== */
+body {
     font-family: system-ui, sans-serif;
     margin: 0;
     padding: 1rem;
     line-height: 1.5;
-  }
-  
-  h1, h2 {
+}
+
+h1, h2 {
     margin-top: 0;
-  }
-  
-  header nav ul {
+}
+
+header nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-  }
-  
-  /* ==== PLANNING ==== */
-  .planning-grid {
+}
+
+/* ==== PLANNING ==== */
+.planning-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
-  }
-  
-  /* ==== MODES DE RENDU ==== */
-  
-  /* 🌐 Mode basique (connexion très lente) */
-  .mode-basic .planning-grid,
-  .mode-basic .performance-tracker,
-  .mode-basic .nutrition-box {
+}
+
+/* ==== MODES DE RENDU ==== */
+
+/* 🌐 Mode basique (connexion très lente) */
+.mode-basic .planning-grid,
+.mode-basic .performance-tracker,
+.mode-basic .nutrition-box {
     display: none !important;
-  }
-  
-  .mode-basic .fallback-message {
+}
+
+.mode-basic .fallback-message {
     display: block;
     font-style: italic;
-    color: gray;
-  }
-  
-  .mode-basic::before {
-    content: \"📶 Connexion très lente — contenu allégé.\";
+    color: #f9fafb; /* texte très clair */
+    background-color: #1e3a8a; /* bleu foncé accessible sur fond sombre */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.mode-basic::before {
+    content: "📶 Connexion très lente — contenu allégé.";
     display: block;
     color: red;
     margin-bottom: 1rem;
-  }
-  
-  /* 📄 Mode moyen (connexion 3G) */
-  .mode-medium .planning-grid {
+}
+
+/* 📄 Mode moyen (connexion 3G) */
+.mode-medium .planning-grid {
     display: grid;
-  }
-  
-  .mode-medium .performance-tracker {
+}
+
+.mode-medium .performance-tracker {
     display: none !important;
-  }
-  
-  .mode-medium .nutrition-box {
+}
+
+.mode-medium .nutrition-box {
     display: none !important;
-  }
-  
-  .mode-medium .fallback-message {
+}
+
+.mode-medium .fallback-message {
     display: none;
-  }
-  
-  /* 🧠 Mode détaillé (connexion rapide) */
-  .mode-detailed .planning-grid,
-  .mode-detailed .performance-tracker,
-  .mode-detailed .nutrition-box {
+}
+
+/* 🧠 Mode détaillé (connexion rapide) */
+.mode-detailed .planning-grid,
+.mode-detailed .performance-tracker,
+.mode-detailed .nutrition-box {
     display: block;
-  }
-  
-  .mode-detailed .fallback-message {
+}
+
+.mode-detailed .fallback-message {
     display: none;
-  }
-  
-  .mode-detailed::before {
-    content: \"🧠 Connexion rapide — contenu enrichi activé.\";
+}
+
+.mode-detailed::before {
+    content: "🧠 Connexion rapide — contenu enrichi activé.";
     display: block;
     font-weight: bold;
     margin-bottom: 1rem;
-  }
-  
-  /* ==== ACCESSIBILITÉ ==== */
-  :focus {
+}
+
+/* ==== ACCESSIBILITÉ ==== */
+:focus {
     outline: 2px solid #00f;
     outline-offset: 2px;
-  }
-  
-  a {
+}
+
+a {
     color: inherit;
-  }
-  
-  input, button {
+}
+
+input, button {
     font-size: 1rem;
     padding: 0.5em;
     margin-top: 0.25rem;
     display: block;
     width: 100%;
     max-width: 400px;
-  }
-  
-  /* 🎨 Enrichissement visuel (fibre) */
+}
+
+/* 🎨 Enrichissement visuel (fibre) */
 .mode-detailed h1 {
     font-size: 2.5rem;
     text-align: center;
     background: linear-gradient(to right, #34d399, #3b82f6);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     animation: slidein 2s ease-in-out;
-  }
-  
-  .mode-detailed .planning-grid {
+}
+
+.mode-detailed .planning-grid {
     background-color: #f0f4f8;
     border-radius: 1rem;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     animation: fadeIn 0.8s ease-in-out;
-  }
-  
-  .mode-detailed .planning-grid::before {
-    content: \"📅 Voici votre planning optimisé !\";
+}
+
+.mode-detailed .planning-grid::before {
+    content: "📅 Voici votre planning optimisé !";
     display: block;
     font-size: 1.2rem;
-    color: #10b981;
+    color: #065f46; /* vert foncé compatible AAA */
     margin-bottom: 0.5rem;
-  }
-  
-  .mode-detailed .performance-tracker table {
-    border: 2px solid #10b981;
+}
+
+.mode-detailed .performance-tracker table {
+    border: 2px solid #065f46; /* vert foncé avec contraste suffisant */
     border-radius: 0.5rem;
     overflow: hidden;
     animation: slideUp 0.8s ease;
-  }
-  
-  .mode-detailed .nutrition-box p {
+}
+
+.mode-detailed .nutrition-box p {
+    color: #111; /* texte très foncé pour contraste AAA */
     padding: 0.5rem;
-    border-left: 4px solid #3b82f6;
-    background: #e0f2fe;
+    border-left: 4px solid #2563eb; /* bleu royal */
+    background: #dbeafe; /* bleu lavande clair */
     margin-bottom: 0.25rem;
     transition: background 0.3s;
-  }
-  .mode-detailed .nutrition-box p:hover {
-    background: #bae6fd;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
+}
+
+.mode-detailed .nutrition-box p:hover {
+    background: #bfdbfe; /* bleu clair hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes slideUp {
+}
+
+@keyframes slideUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes slidein {
+}
+
+@keyframes slidein {
     from { transform: translateX(-100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
-  }
-  
+}
+
+/* ==== ACCESSIBILITÉ CLAVIER : lien d’évitement ==== */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    background: #000;
+    color: #fff;
+    z-index: 1000;
+}
+
+/* ==== ACCESSIBILITÉ FORMULAIRE ==== */
+.error-message {
+    color: #b91c1c; /* rouge accessible */
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+input.erreur {
+    border: 2px solid #b91c1c;
+    background-color: #fee2e2;
+}
+
+/* ==== MESSAGE DE SUCCÈS ==== */
+.success-message {
+    color: #047857; /* vert foncé */
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: none;
+}
+
+/* ==== VISUALISATION ÉCRAN LECTEUR : contenu caché visuellement mais lu ==== */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
