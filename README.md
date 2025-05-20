@@ -57,6 +57,6 @@ Créer une application web **ultra-légère**, **responsive** et **100% accessib
 ## 🛠 Lancer le projet en local
 
 ```bash
-git clone [https://github.com/<votre-utilisateur>/<nom-du-repo>.git](https://github.com/BragaAteMorrer/projet-stratinfra-3emeannee.git)
+git clone https://github.com/BragaAteMorrer/projet-stratinfra-3emeannee.git
 cd projet-stratinfra-3emeannee
 # Ouvrir index.html dans le navigateur
