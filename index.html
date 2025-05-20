@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Coach Sportif</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.documentElement.classList.replace("no-js", "js-enabled");
+  </script>
+</head>
+<body>
+  <!-- Début header Nelson Almeida -->
+  <header>
+    <h1>Agenda Coach Sportif</h1>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="#planning">Planning</a></li>
+        <li><a href="#seances">Préparation</a></li>
+        <li><a href="#suivi">Suivi</a></li>
+        <li><a href="#repos">Repos</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Fin header Nelson Almeida -->
+
+  <main id="main">
+    <section id="planning">
+      <h2>Planning des séances</h2>
+      <div id="planning-content">
+        <p class="fallback-message">Chargement du planning...</p>
+        <div class="planning-grid">
+          <!-- Contenu dynamique selon la qualité de connexion -->
+        </div>
+      </div>
+    </section>
+
+    <section id="seances">
+      <h2>Préparation des séances</h2>
+      <form>
+        <label for="client">Client</label>
+        <input type="text" id="client" name="client" required>
+
+        <label for="objectif">Objectif</label>
+        <input type="text" id="objectif" name="objectif">
+
+        <label for="exercice">Exercice</label>
+        <input type="text" id="exercice" name="exercice">
+
+        <button type="submit">Enregistrer</button>
+      </form>
+    </section>
+
+    <section id="suivi">
+      <h2>Suivi de performances</h2>
+      <div class="performance-tracker">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Client</th>
+              <th>Exercice</th>
+              <th>Résultat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15/05/2025</td>
+              <td>Jean</td>
+              <td>Pompes</td>
+              <td>35 reps</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="repos">
+      <h2>Périodes de repos</h2>
+      <p>Prévoir les temps de récupération physique et mentale dans le planning.</p>
+    </section>
+
+    <section id="nutrition">
+      <h2>Suivi nutritionnel</h2>
+      <div class="nutrition-box">
+        <p>Repas type (matin) : Flocons d’avoine, banane, yaourt nature</p>
+        <p>Repas type (midi) : Poulet, riz complet, brocolis</p>
+        <p>Repas type (soir) : Soupe de légumes, œufs durs, pain complet</p>
+      </div>
+    </section>
+  </main>
+
+  <noscript>
+    <p>Ce site fonctionne mieux avec JavaScript activé, mais reste lisible sans.</p>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
