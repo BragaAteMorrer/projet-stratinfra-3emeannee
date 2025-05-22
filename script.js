@@ -26,10 +26,10 @@
         html.classList.add('mode-detailed');
       }
       else {
-        html.classList.add('mode-medium');
+        html.classList.add('mode-intermediate');
       }
     } else {
-      html.classList.add('mode-medium');
+      html.classList.add('mode-intermediate');
     }
   
     // ✨ Formulaire de séance
