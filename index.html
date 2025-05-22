@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda Simple et Accessible</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Agenda en ligne</h1>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Ajouter un événement</a></li>
+          <li><a href="#">Calendrier</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section aria-labelledby="intro">
+        <h2 id="intro">Bienvenue sur notre agenda léger</h2>
+        <p>Organisez vos journées facilement, sans vous perdre dans une interface lourde. Ce site est 100% accessible et compatible avec toutes les machines.</p>
+      </section>
+
+      <section aria-labelledby="today">
+        <h2 id="today">Événements du jour</h2>
+        <ul id="event-list">
+          <li>Chargement des événements...</li>
+        </ul>
+        <noscript>
+          <p style="color: red;">Activez JavaScript pour voir les événements du jour.</p>
+        </noscript>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Agenda Web Accessible</p>
+    </footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

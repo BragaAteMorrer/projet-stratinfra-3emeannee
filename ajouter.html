@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter un événement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Ajouter un événement</h1>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="ajouter.html">Ajouter un événement</a></li>
+          <li><a href="#">Calendrier</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Remplir les champs</h2>
+      <form id="event-form">
+        <label for="title">Titre de l’événement</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Heure</label>
+        <input type="time" id="time" name="time" required>
+
+        <button type="submit">Ajouter</button>
+      </form>
+
+      <p id="message" aria-live="polite"></p>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Agenda Web Accessible</p>
+    </footer>
+  </div>
+
+  <script src="ajouter.js" defer></script>
+</body>
+</html>

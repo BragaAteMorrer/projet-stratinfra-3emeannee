@@ -1,0 +1,36 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("event-form");
+    const message = document.getElementById("message");
+  
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      const title = document.getElementById("title").value.trim();
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+  
+      if (!title || !date || !time) {
+        message.textContent = "Tous les champs sont obligatoires.";
+        return;
+      }
+  
+      const newEvent = {
+        title,
+        date,
+        time
+      };
+  
+      // Récupère les événements existants
+      const existing = JSON.parse(localStorage.getItem("events") || "[]");
+  
+      // Ajoute le nouvel événement
+      existing.push(newEvent);
+  
+      // Sauvegarde dans le localStorage
+      localStorage.setItem("events", JSON.stringify(existing));
+  
+      message.textContent = "Événement ajouté avec succès !";
+      form.reset();
+    });
+  });
+  
