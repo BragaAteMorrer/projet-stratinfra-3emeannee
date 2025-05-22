@@ -208,21 +208,6 @@ input.erreur {
     margin: 0;
 }
 
-/* ==== BOUTON VOIX ==== */
-#voice-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-#voice-btn:focus {
-    outline: 2px solid #00f;
-    outline-offset: 2px;
-}
 
 /* ==== ENRICHISSEMENT VISUEL (fibre) ==== */
 .mode-detailed h1 {
@@ -287,16 +272,26 @@ input.erreur {
     to   { transform: translateX(0); opacity: 1; }
 }
 
+/* ==== BOUTON VOIX ==== */
+#voice-btn,
 .voice-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#voice-btn:focus,
 .voice-btn:focus {
-    outline: 2px solid #00f;
-    outline-offset: 2px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
