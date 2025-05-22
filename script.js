@@ -12,7 +12,7 @@
   
     // 📶 Qualité de la connexion → modes visuels
     if (connection) {
-      html.classList.remove('mode-basic','mode-medium','mode-intermediate','mode-detailed');
+      html.classList.remove('mode-basic','mode-intermediate','mode-detailed');
       const type = connection.effectiveType; // 'slow-2g'|'2g'|'3g'|'4g'
       const dl   = connection.downlink;      // Mbps (ex: 1.25)
   
