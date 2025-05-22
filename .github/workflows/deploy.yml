@@ -1,0 +1,32 @@
+name: Déploiement automatique sur GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Récupérer les fichiers du dépôt
+        uses: actions/checkout@v3
+
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Préparer les fichiers pour Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: .
+
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

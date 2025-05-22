@@ -19,10 +19,7 @@
       if (['slow-2g','2g'].includes(type)) {
         html.classList.add('mode-basic');
       }
-      else if (type === '3g' && dl < 1.25) {
-        html.classList.add('mode-medium');
-      }
-      else if (type === '3g' && dl >= 1.25) {
+      else if (type === '3g') {
         html.classList.add('mode-intermediate');
       }
       else if (type === '4g') {

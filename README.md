@@ -32,6 +32,7 @@ Créer une application web **ultra-légère**, **responsive** et **100% accessib
 - Feedback vocal accessible via lecteurs d'écran
 - Mode sombre activé via `prefers-color-scheme`
 
+<<<<<<< HEAD
 ## 🎤 Commande vocale
 Grâce à l’API Web Speech, votre navigateur (Edge/Cortana ou Safari/Siri) reconnaît ces commandes :
 - **planning** : navigation rapide vers la section Planning  
@@ -40,6 +41,8 @@ Grâce à l’API Web Speech, votre navigateur (Edge/Cortana ou Safari/Siri) rec
 
 Cliquez sur le bouton 🎤 en haut à droite pour l’activer.
 
+=======
+>>>>>>> dea0045581fffa4caf80a09d49a6e473b46b11e9
 ---
 
 ## 🚀 Fonctionnalités
