@@ -10,12 +10,18 @@
   </script>
 </head>
 <body>
-  <!-- Début header Nelson Almeida -->
+  <!-- Lien d’évitement pour l’accessibilité clavier -->
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Début header -->
   <header>
     <h1>Agenda Coach Sportif</h1>
+    <button id="voice-btn" aria-label="Activer les commandes vocales">
+      "🎤"
+    </button>
     <nav aria-label="Menu principal">
       <ul>
-        <li><a href="#planning">Planning</a></li>
+        <li><a href="#planning" aria-current="page">Planning</a></li>
         <li><a href="#seances">Préparation</a></li>
         <li><a href="#suivi">Suivi</a></li>
         <li><a href="#repos">Repos</a></li>
@@ -23,13 +29,13 @@
       </ul>
     </nav>
   </header>
-  <!-- Fin header Nelson Almeida -->
+  <!-- Fin header -->
 
   <main id="main">
     <section id="planning">
-      <h2>Planning des séances</h2>
-      <div id="planning-content">
-        <p class="fallback-message">Chargement du planning...</p>
+      <h2 tabindex="-1">Planning des séances</h2>
+      <div id="planning-content" aria-live="polite">
+        <p class="fallback-message">Chargement du planning…</p>
         <div class="planning-grid">
           <!-- Contenu dynamique selon la qualité de connexion -->
         </div>
@@ -37,31 +43,46 @@
     </section>
 
     <section id="seances">
-      <h2>Préparation des séances</h2>
-      <form>
-        <label for="client">Client</label>
-        <input type="text" id="client" name="client" required>
-
-        <label for="objectif">Objectif</label>
-        <input type="text" id="objectif" name="objectif">
-
-        <label for="exercice">Exercice</label>
-        <input type="text" id="exercice" name="exercice">
-
-        <button type="submit">Enregistrer</button>
+      <h2 tabindex="-1">Préparation des séances</h2>
+      <form id="form-seance" novalidate role="form">
+        <!-- client -->
+        <div class="form-group">
+          <label for="client">Client <span aria-hidden="true">*</span></label>
+          <input type="text" id="client" name="client" required aria-describedby="error-client">
+          <p id="error-client" class="error-message"
+             role="alert" aria-live="assertive" aria-hidden="true"></p>
+        </div>
+        <!-- objectif -->
+        <div class="form-group">
+          <label for="objectif">Objectif <span id="info-objectif" class="visually-hidden">(facultatif)</span></label>
+          <input type="text" id="objectif" name="objectif" aria-describedby="error-objectif info-objectif">
+          <p id="error-objectif" class="error-message"
+             role="alert" aria-live="assertive" aria-hidden="true"></p>
+        </div>
+        <!-- exercice -->
+        <div class="form-group">
+          <label for="exercice">Exercice <span aria-hidden="true">*</span></label>
+          <input type="text" id="exercice" name="exercice" required aria-describedby="error-exercice">
+          <p id="error-exercice" class="error-message"
+             role="alert" aria-live="assertive" aria-hidden="true"></p>
+        </div>
+        <button type="submit" aria-label="Enregistrer la séance">Enregistrer</button>
       </form>
+      <p id="form-success" class="success-message"
+         role="alert" aria-live="polite" aria-hidden="true"></p>
     </section>
 
     <section id="suivi">
-      <h2>Suivi de performances</h2>
+      <h2 tabindex="-1">Suivi de performances</h2>
       <div class="performance-tracker">
         <table>
+          <caption>Données de suivi des séances</caption>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Client</th>
-              <th>Exercice</th>
-              <th>Résultat</th>
+              <th scope="col">Date</th>
+              <th scope="col">Client</th>
+              <th scope="col">Exercice</th>
+              <th scope="col">Résultat</th>
             </tr>
           </thead>
           <tbody>
@@ -77,12 +98,12 @@
     </section>
 
     <section id="repos">
-      <h2>Périodes de repos</h2>
+      <h2 tabindex="-1">Périodes de repos</h2>
       <p>Prévoir les temps de récupération physique et mentale dans le planning.</p>
     </section>
 
     <section id="nutrition">
-      <h2>Suivi nutritionnel</h2>
+      <h2 tabindex="-1">Suivi nutritionnel</h2>
       <div class="nutrition-box">
         <p>Repas type (matin) : Flocons d’avoine, banane, yaourt nature</p>
         <p>Repas type (midi) : Poulet, riz complet, brocolis</p>
@@ -90,6 +111,10 @@
       </div>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Groupe 14 – Projet HETIC</p>
+  </footer>
 
   <noscript>
     <p>Ce site fonctionne mieux avec JavaScript activé, mais reste lisible sans.</p>
