@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendrier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Calendrier</h1>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="ajouter.html">Ajouter un événement</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <h2 id="month-title">Mois en cours</h2>
+      
+        <div class="calendar-controls">
+          <button id="prev-month">← Mois précédent</button>
+          <button id="next-month">Mois suivant →</button>
+        </div>
+      
+        <div id="calendar" class="calendar-grid" role="grid"></div>
+      </main>
+      
+
+    <footer>
+      <p>&copy; 2025 - Agenda Web Accessible</p>
+    </footer>
+  </div>
+
+  <script src="calendrier.js" defer></script>
+</body>
+</html>

@@ -14,7 +14,7 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="ajouter.html">Ajouter un événement</a></li>
-          <li><a href="#">Calendrier</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
         </ul>
       </nav>
     </header>
@@ -42,6 +42,38 @@
     </footer>
   </div>
 
+  <!-- Script d'ajout JS -->
   <script src="ajouter.js" defer></script>
+
+  <!-- Script DEBUG affichage localStorage -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const debugData = localStorage.getItem("events");
+
+      const debugBox = document.createElement("div");
+      debugBox.style.position = "relative";
+      debugBox.style.zIndex = "9999";
+      debugBox.style.background = "#ffffcc";
+      debugBox.style.color = "#111";
+      debugBox.style.border = "2px solid #333";
+      debugBox.style.padding = "1rem";
+      debugBox.style.margin = "2rem auto";
+      debugBox.style.maxWidth = "800px";
+      debugBox.style.fontFamily = "monospace";
+      debugBox.style.fontSize = "0.9rem";
+      debugBox.style.whiteSpace = "pre-wrap";
+      debugBox.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
+      debugBox.style.borderRadius = "6px";
+      debugBox.style.textAlign = "left";
+
+      if (debugData) {
+        debugBox.textContent = `📦 localStorage (events) :\n\n${debugData}`;
+      } else {
+        debugBox.textContent = "❌ Aucun événement enregistré pour le moment.";
+      }
+
+      document.body.appendChild(debugBox);
+    });
+  </script>
 </body>
 </html>

@@ -14,22 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
   
-      const newEvent = {
-        title,
-        date,
-        time
-      };
+      const newEvent = { title, date, time };
   
-      // Récupère les événements existants
-      const existing = JSON.parse(localStorage.getItem("events") || "[]");
+      // Récupération des événements actuels
+      const existing = JSON.parse(localStorage.getItem("events")) || [];
   
-      // Ajoute le nouvel événement
+      // Ajout du nouveau
       existing.push(newEvent);
   
       // Sauvegarde dans le localStorage
       localStorage.setItem("events", JSON.stringify(existing));
   
+      // Confirmation visuelle
       message.textContent = "Événement ajouté avec succès !";
+  
+      // Réinitialiser le formulaire
       form.reset();
     });
   });
