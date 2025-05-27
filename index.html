@@ -1,33 +1,125 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <title>Clique sur l’Alien</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agenda Coach Sportif – Gérer vos séances, performances et nutrition en toute simplicité. Accessible, rapide et optimisé.">
+  <title>Agenda Coach Sportif</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.documentElement.classList.replace("no-js", "js-enabled");
+  </script>
 </head>
 <body>
-  <!-- Écran d'accueil -->
-  <div id="ecran-accueil" class="ecran visible">
-    <h1>Clique sur l’Alien !</h1>
-    <img src="alien.png" alt="Alien pixelisé" class="sprite" />
-    <button id="btn-demarrer">Commencer le jeu</button>
-  </div>
+  <!-- Lien d’évitement pour l’accessibilité clavier -->
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
 
-  <!-- Zone de jeu -->
-  <div id="jeu" class="cache"></div>
+  <!-- Début header -->
+  <header>
+    <h1>Agenda Coach Sportif</h1>
+    <button id="voice-btn" aria-label="Activer les commandes vocales" class="voice-button">
+      Activer 🎤
+    </button>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="#planning" aria-current="page">Planning</a></li>
+        <li><a href="#seances">Préparation</a></li>
+        <li><a href="#suivi">Suivi</a></li>
+        <li><a href="#repos">Repos</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Fin header -->
 
-  <!-- Infos affichées pendant le jeu -->
-  <div id="infos" class="cache">
-    <p><strong>Temps restant :</strong> <span id="temps">30</span> secondes</p>
-    <p><strong>Score :</strong> <span id="score">0</span></p>
-  </div>
+  <main id="main">
+    <section id="planning">
+      <h2 tabindex="-1">Planning des séances</h2>
+      <div id="planning-content" aria-live="polite">
+        <p class="fallback-message">Chargement du planning…</p>
+        <div class="planning-grid">
+          <!-- Contenu dynamique selon la qualité de connexion -->
+        </div>
+      </div>
+    </section>
 
-  <!-- Écran de fin -->
-  <div id="ecran-fin" class="ecran">
-    <h2>⏱️ Temps écoulé !</h2>
-    <p>Ton score final est : <span id="score-final"></span></p>
-    <button id="btn-rejouer">Rejouer</button>
-  </div>
+    <section id="seances">
+      <h2 tabindex="-1">Préparation des séances</h2>
+      <form id="form-seance" novalidate role="form">
+        <!-- client -->
+        <div class="form-group">
+          <label for="client">Client <span aria-hidden="true">*</span></label>
+          <input type="text" id="client" name="client" required aria-describedby="error-client">
+          <p id="error-client" class="error-message"
+             role="alert" aria-live="assertive" aria-hidden="true"></p>
+        </div>
+        <!-- objectif -->
+        <div class="form-group">
+          <label for="objectif">Objectif <span id="info-objectif" class="visually-hidden">(facultatif)</span></label>
+          <input type="text" id="objectif" name="objectif" aria-describedby="error-objectif info-objectif">
+          <p id="error-objectif" class="error-message"
+             role="alert" aria-live="assertive" aria-hidden="true"></p>
+        </div>
+        <!-- exercice -->
+        <div class="form-group">
+          <label for="exercice">Exercice <span aria-hidden="true">*</span></label>
+          <input type="text" id="exercice" name="exercice" required aria-describedby="error-exercice">
+          <p id="error-exercice" class="error-message"
+             role="alert" aria-live="assertive" aria-hidden="true"></p>
+        </div>
+        <button type="submit" aria-label="Enregistrer la séance">Enregistrer</button>
+      </form>
+      <p id="form-success" class="success-message"
+         role="alert" aria-live="polite" aria-hidden="true"></p>
+    </section>
+
+    <section id="suivi">
+      <h2 tabindex="-1">Suivi de performances</h2>
+      <div class="performance-tracker">
+        <table>
+          <caption>Données de suivi des séances</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Client</th>
+              <th scope="col">Exercice</th>
+              <th scope="col">Résultat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15/05/2025</td>
+              <td>Jean</td>
+              <td>Pompes</td>
+              <td>35 reps</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="repos">
+      <h2 tabindex="-1">Périodes de repos</h2>
+      <p>Prévoir les temps de récupération physique et mentale dans le planning.</p>
+    </section>
+
+    <section id="nutrition">
+      <h2 tabindex="-1">Suivi nutritionnel</h2>
+      <div class="nutrition-box">
+        <p>Repas type (matin) : Flocons d’avoine, banane, yaourt nature</p>
+        <p>Repas type (midi) : Poulet, riz complet, brocolis</p>
+        <p>Repas type (soir) : Soupe de légumes, œufs durs, pain complet</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Groupe 14 – Projet HETIC</p>
+  </footer>
+
+  <noscript>
+    <p>Ce site fonctionne mieux avec JavaScript activé, mais reste lisible sans.</p>
+  </noscript>
 
   <script src="script.js"></script>
 </body>
